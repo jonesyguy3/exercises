@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>mylifeline</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    </head>
+    <body>
+
+        <div>
+            <h2> angry gandalf </h2>
+            <input type='text' id="name" />
+            <button id="submitInput">Submit</button>
+            <div id="gandalfMessage"></div>    
+        </div>
+
+
+       
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+        <!-- Add your site or application content here -->
+        
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
+
+        <script type="text/javascript">
+            
+               
+            /**
+            * @exercise 1 - lifeLine
+            * @description takes children, partner's name, hometown, and job
+            * @returns 'You are a W from X and married to Y  with Z kids.'
+            **/
+
+            // Create function with name tellFortune and appropriate parameters
+            tellFortune function(w,x,y,z) {
+
+            // Take 4 arguments: number of children, partner's name, hometown, job title.
+            // Define string variable that will have that output
+            var oracion = "You are a " + w + " from " + x + " and married to " + " with " + z + " kids."
+
+            // Return that string
+            return oracion;          
+            }
+            
+            console.assert(lifeLine('bball player', 'Spain', 'Shaq', 3) === 'You are a bball player from Spain and married to Shaq  with 3 kids.' ); 
+            console.assert(lifeLine('stunt double', 'Japan', 'Ryan Gosling', 3000) === 'You are a stunt double from Japan and married to Ryan Gosling  with 3000 kids.');
+            console.assert(lifeLine('Elvis impersonator', 'Russia', 'The Oatmeal', 0) === 'You are a Elvis impersonator from Russia and married to The Oatmeal  with 0 kids.') ;
+
+            // Event Handler
+            $("#submitInput").on('click', function() {
+            var name = $("#name").val();
+            var message = angryGandalf(name);
+            $("#gandalfMessage").html(message);
+            });
+
+
+        </script>
+    </body>
+</html>
