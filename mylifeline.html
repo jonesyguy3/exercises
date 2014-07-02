@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>mylifeline</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    </head>
+    <body>
+
+        <div>
+            <h2> mylifeline </h2>
+            
+                Profession: <input type="text" id="profession"/><br>
+                From: <input type="text" id="origin"/><br>
+                Married To: <input type="text" id="spouse"/><br>
+                Num of Kids: <input type="text" id="kids"/><br>
+                <button id="submitform">Submit</button>
+            
+              
+        </div>
+        <div id="mylifeline"></div>  
+
+        <!-- Add your site or application content here -->
+        
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
+
+        <script type="text/javascript">
+            
+            /**
+            * @exercise 1 - lifeLine
+            * @description takes children, partner's name, hometown, and job
+            * @returns 'You are a W from X and married to Y  with Z kids.'
+            **/
+
+            // Create function with name lifeLine and appropriate parameters
+            function lifeLine(w,x,y,z) {
+
+            // Take 4 arguments: number of children, partner's name, hometown, job title.
+            // Define string variable that will have that output
+            var vowelCheck = w.charAt(0);
+            if (vowelCheck === 'a' || vowelCheck === 'e' || vowelCheck === 'i' || vowelCheck === 'o' || vowelCheck === 'u'){
+                w = 'n ' + w;
+            } else {
+                w = ' ' + w;
+            }
+            var oracion = "You are a" + w + " from " + x + " and married to " + y + " with " + z + " kids.";
+            console.log(oracion);
+            // Return that string
+            return oracion;          
+            }
+            
+            console.assert(lifeLine('bball player', 'Spain', 'Shaq', 3) === 'You are a bball player from Spain and married to Shaq with 3 kids.' ); 
+            console.assert(lifeLine('stunt double', 'Japan', 'Ryan Gosling', 3000) === 'You are a stunt double from Japan and married to Ryan Gosling with 3000 kids.');
+            console.assert(lifeLine('Elvis impersonator', 'Russia', 'The Oatmeal', 0) === 'You are a Elvis impersonator from Russia and married to The Oatmeal with 0 kids.') ;
+
+            // Event Handler
+            $("#submitform").on('click', function() {
+            var w = $("#profession").val();
+            console.log(w);
+            var x = $("#origin").val();
+            var y = $("#spouse").val();
+            var z = $("#kids").val();
+            var message = lifeLine(w,x,y,z);
+            console.log(message);
+            $("#mylifeline").html(message);
+            });
+
+
+        </script>
+    </body>
+</html>
