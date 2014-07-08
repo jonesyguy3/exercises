@@ -16,9 +16,9 @@
             
                 <p> Please select one: </p>
 
-                <button id="Rock">Rock</button>
-                <button id="Paper">Paper</button>
-                <button id="Scissors">Scissors</button>
+                <button id="rock">Rock</button>
+                <button id="paper">Paper</button>
+                <button id="scissors">Scissors</button>
             
               
         </div>
@@ -66,7 +66,7 @@
 
                 }else {
                     computerScore +=1;
-                return("The computer threw paper you lose.");
+                    return("The computer threw paper you lose.");
                 }
             }
     
@@ -94,26 +94,26 @@
          
 
             // Event Handler
-            $("#Rock").on('click', function (e) {
+            $("button").on('click', function (e) {
                 e.preventDefault();
-            var result = compare("rock", computerChoice());
+            var result = compare(this.id, computerChoice());
             $("#computerthrows").html(result);
             $("#score").html("All time Score: " + yourScore + " - " + computerScore + " - " + ties);
             });
 
-            $("#Paper").on('click', function (e) {
-                e.preventDefault();
-            var result = compare("paper", computerChoice());
-            $("#computerthrows").html(result);
-            $("#score").html("All time Score: " + yourScore + " - " + computerScore + " - " + ties);
-            });
+            // $("#Paper").on('click', function (e) {
+            //     e.preventDefault();
+            // var result = compare("paper", computerChoice());
+            // $("#computerthrows").html(result);
+            // $("#score").html("All time Score: " + yourScore + " - " + computerScore + " - " + ties);
+            // });
 
-            $("#Scissors").on('click', function (e) {
-                e.preventDefault();
-            var result = compare("scissors", computerChoice());
-            $("#computerthrows").html(result);
-            $("#score").html("All time Score: " + yourScore + " - " + computerScore + " - " + ties);
-            });
+            // $("#Scissors").on('click', function (e) {
+            //     e.preventDefault();
+            // var result = compare("scissors", computerChoice());
+            // $("#computerthrows").html(result);
+            // $("#score").html("All time Score: " + yourScore + " - " + computerScore + " - " + ties);
+            // });
 
 
         </script>
