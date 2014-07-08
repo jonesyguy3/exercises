@@ -218,7 +218,7 @@
             console.assert(ofAge(-2) === false);
 
            /**
-            * Exercise 2 Part 2: getAge
+            * Exercise 2 Part 2: calculateAge
             **/
 
             function calculateAge(birthMonth, birthDay, birthYear) {
@@ -273,7 +273,8 @@ console.assert(checkOfAge(1,1,2001) === false);
 
 
             // Event Handler
-            $("#submitform").on('click', function() {
+            $("#submitform").on('click', function (e) {
+                e.preventDefault();
             var month = $("#DateOfBirth_Month").val();
             console.log(month);
             var day = $("#DateOfBirth_Day").val();
