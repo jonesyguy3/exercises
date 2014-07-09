@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+ <html> 
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>show-friends</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    </head>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
+    <body>
+
+        
+
+        <p> Show Friends exercise </p>
+
+        Add a Friend: <input type="text" id="newFriend"/> <br>
+        <button id="submit">Submit</button>
+        <div id = 'fullList'></div>
+       
+        <script>
+       // Add the names of everyone at your table   
+        var friends = ['Alex', 'Elyse', 'Mae', 'Sartaj'];
+
+        function createList (){
+            
+            var list = "<ul id= 'friendList'>";
+            for (var i = 0; i < friends.length; i++) {
+            list +=  "<li>" + friends[i] + "<button class ='remove' data-id = \'" + i + "\'> Remove User </button> </li>";
+            
+            }   
+
+            list = list + '</ul>';
+            return list;
+        }
+
+        function addFriend(newFriend) {
+            friends.push(newFriend);
+        }
+
+        function removeFriend (placenumber){
+            friends.splice(placenumber,1);
+        }
+
+        $("#fullList").html(createList());
+        
+
+        $(".remove").on('click', function (e) {
+            e.preventDefault();
+            console.log("I got this far");
+            removeFriend ($(this).data("id"));
+          
+          $("#fullList").html(createList());
+        });
+
+        //eventhandler
+        $("#submit").on('click', function (e) {
+            e.preventDefault();
+            addFriend ($("#newFriend").val());
+                      
+           $("#fullList").html(createList());
+           
+        });
+
+
+
+        </script>
+        
+    
+    </body>
+</html>
