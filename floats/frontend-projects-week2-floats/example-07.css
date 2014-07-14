@@ -6,23 +6,59 @@
 /* Example 07 */
 
 .container {
-	width: 1024px; /* change me to a percentage width, like 80% */
+	width: 1024px;
 	margin: 0 auto;
 }
 
+.header:after {
+	content: "";
+  	visibility: hidden;
+  	display: block;
+  	/*height: 0;*/
+  	clear: both;
+}
+/* hint! what do you have to add here? */
 
-.header {}
+.logo {
+	float: left;
+}
 
-.logo {}
+.navigation {
+	float: right;
+}
 
-.navigation {}
+.sidebar {
+	clear: both;
+	float:left;
+	height: 300px;
+	width: 25%;
+}
 
-.sidebar {}
+.main-content:after {
+	content: "";
+  	visibility: hidden;
+  	display: block;
+  	height: 0;
+  	clear: both;
+}
+/* hint! you have to contain the floated children elements. */
 
-.main-content {}
+.sub-content {
+	/* hint! */
+	float: right;
+	width: 60%;
+	height: 100px;
+	
+}
+.sub-content-2 {
+	float: right;
+	width: 60%;
+	height: 100px;
+	
 
-.sub-content {}
 
-.sub-content-2 {}
+}
 
-.footer {}
+.footer {
+	clear: both;
+}

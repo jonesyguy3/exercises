@@ -10,8 +10,12 @@
     margin: 0 auto; /* centers this containing element in the browser viewport */
 }
 
-.header {
-    /* we don't want the header floated, so nothing to do here! */
+.header:after {
+    content: ""; /* we don't want the header floated, so nothing to do here! */
+    display: block;
+    clear: both;
+    border: 1px solid black;
+    visibility: hidden;
 }
 
 .sidebar {

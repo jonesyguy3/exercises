@@ -11,7 +11,12 @@
 }
 
 
-.header {}
+.header:after {
+	content: "";
+	visibility: hidden;
+	display: block;
+	border: 1px solid black;
+}
 
 .sidebar {
 	float: right;

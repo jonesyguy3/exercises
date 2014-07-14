@@ -12,12 +12,25 @@
 
 .header {}
 
+.sidebar {
+	float:left;
+	width: 33.33%;
+	height: 300px;
+}
 
-.sidebar {}
+.main-content {
+	float: left;
+	height: 300px;
+	width: 33.33%;
+}
 
-.main-content {}
+.sub-content {
+	float: left;
+	width: 33.33%;
+	height: 300px;
+}
 
-.sub-content {}
 
-
-.footer {}
+.footer {
+	clear: both;
+}

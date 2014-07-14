@@ -47,11 +47,11 @@
         $("#fullList").html(createList());
         
 
-        $(".remove").on('click', function (e) {
+        $(document).on('click', '.remove', function (e, ui) {
             e.preventDefault();
             console.log("I got this far");
-            removeFriend ($(this).data("id"));
-          
+            friends.splice(($(this).data("id")),1);
+          $("#friendList").remove();
           $("#fullList").html(createList());
         });
 
